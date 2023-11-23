@@ -1,4 +1,6 @@
 
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:stylish/view/landing_page/landing_page.dart';
@@ -19,10 +21,12 @@ class ScreenLaunch extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         leading: const Icon(Icons.arrow_back_ios_new),
-        actions: const [
+        actions:  [
           Padding(
             padding: EdgeInsets.only(right: 15),
-            child: Text('Skip'),
+            child: TextButton(child: Text('Skip'),onPressed: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) => LandingPage(),));
+            },),
           )
         ],
       ),
